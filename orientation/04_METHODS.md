@@ -90,11 +90,11 @@ public void SetContainerSize (int width, int height, int depth)
 }
 ```
 
-## Static vs. Instance
+## Methods
 
 Instance methods require that a new instance exists in order to use the method.
 
-### Instance Methods
+## Instance Methods
 
 ```cs
 public class Box
@@ -114,26 +114,6 @@ Box cardboardBox = new Box();
 // Open and Close methods can be used
 cardboardBox.Open();
 cardboardBox.Close();
-```
-
-### Static Methods
-
-If a a series of logic needs to be performed, but an object instance isn't required, then the method should be defined as `static`.
-
-```cs
-public class Utilities
-{
-    public static int AddTwoNumbers (int first, int second)
-    {
-        return first + second;
-    }
-}
-```
-
-In this case, you don't need an instance of Utilities.
-
-```cs
-var result = Utilities.AddTwoNumbers(56, 32);
 ```
 
 ## Expression Bodied Functions
@@ -157,7 +137,7 @@ class TextGenerator
 }
 ```
 
-Here's a quick implementation.
+Here's a quick usage.
 
 ```cs
 var t = new TextGenerator();
@@ -177,48 +157,4 @@ And it's implementation change from a method call to a property.
 Console.WriteLine($"Full sentence: {t.Sentence}");
 ```
 
-## Method Based Polymorphism
 
-A method's arity, or signature, can be overloaded. This is very different from JavaScript, when a function can only be defined once. This is not a rule in C#.
-
-Let's make our `Animal.Walk()` method more flexible. As it was written above, it makes the assumption that the `Speed` and `Legs` properties have been set by the developer who created an instance. That's a bad assumption, so let's write code that will handle that case, but also allow the speed and legs values to be sent as parameters to the method.
-
-```cs
-class Animal {
-    // Simple properties
-    public double Speed { get; set; }
-    public string Species { get; set; }
-    public int Legs { get; set; }
-
-    // Public method that can be redefined by derived classes
-    public void Walk () {
-        Speed = Speed + (0.1 * Legs);
-        Console.WriteLine($"Animal class walk method ({Speed})");
-    }
-
-    public void Walk (double speed, int legs) {
-        // Set the object instance properties to the parameter values
-        Legs = legs;
-        Speed = Speed + (0.1 * Legs);
-        Console.WriteLine($"Animal class walk method that accepts parameters ({Speed})");
-    }
-}
-
-Animal abigail = new Animal(){
-    Speed = 0.44,
-    Legs = 2
-};
-abigail.Walk();
-
-Animal aaron = new Animal();
-aaron.Walk();
-aaron.Walk(0.38, 4);
-```
-
-> Output
-
-```sh
-Animal class walk method (0.64)
-Animal class walk method (0)
-Animal class walk method that accepts parameters (0.4)
-```
