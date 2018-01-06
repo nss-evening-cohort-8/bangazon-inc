@@ -4,97 +4,59 @@
 
 We're going to get your first C# console application setup and running so that we can review some basics of the language.
 
-Create a directory to hold the application.
+Open Visual Studio and create a new project.
+Select `Console Application (.NET Framework )`
+Change the name of the project to `MyFirstConsoleApp`
 
-```sh
-mkdir -p ~/workspace/csharp/intro && cd $_
-```
+This will create a new [Solution](#need-link) with a new [Project](#need-link) with a single file in it named `Program.cs`
+`Program.cs` is the file that holds your logic. Think of it as your `app.js` from Angular. It's where the logic of your application starts, the entry point.
 
-Create a new console application with the `dotnet` command line utility.
-
-```sh
-dotnet new console
-```
-
-This will create two files in the directory
-
-1. `intro.csproj` - This file holds all the packages that you application will be using. It's the `package.json` for C#.
-1. `Program.cs` - This is the file that holds your logic. Think of it as your `app.js` from Angular. It's where the logic of your application starts.
-
-Copy this code into your Program.cs, replacing everything there.
+Add this code into your Program.cs inside of the Main function, replacing everything there.
 
 ```cs
-using System;
-
-namespace bangazoncli
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            Console.WriteLine("Welcome to Bangazon!");
-        }
-    }
-}
-
+Console.WriteLine("Welcome to Bangazon!");
+Console.ReadLine();
 ```
 
 > ☞ Unike JavaScript, C# is a compiled language, meaning that you need a compiler to read the source code, parse all the logic, and then construct a new executable file.
 
-Next, you compile the program.
+Next, you compile the program. You can do this by a keyboard shortcut : <kbd>ctrl</kbd>+<kbd>b</kbd> or by going to the `Build` menu and 
+selecting the `Build Solution` option.
 
-```sh
-dotnet build
-```
+Now that you have verified that the program will compile without errors, you can execute it.  This can be done by hitting the green play button in the toolbar or by pressing the <kbd>F5</kbd> key. 
 
-Now that you have verified that the program will compile without errors, you can execute it.
+You should see `Welcome to Bangazon!` print out in your console application.
 
-```sh
-dotnet run
-```
+## Strongly Typed Variables in C#
 
-You should see `Welcome to Bangazon!` print out in your terminal.
-
-## Strongly Typed Variable in C#
-
-Now replace your source code with the following.
+Now replace your Main function's code with the following.
 
 ```cs
-using System;
+// DateTime is the type of the purchaseData variable.
+DateTime purchaseDate=DateTime.Now;
 
-namespace bangazon
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // DateTime is the type of the purchaseData variable.
-            DateTime purchaseDate=DateTime.Now;
+/*
+    string is the type of the lastName variable. It
+    tells the compiler that the lastName variable can
+    ONLY hold a string value.
+*/
+string lastName="Smith";
 
-            /*
-                string is the type of the lastName variable. It
-                tells the compiler that the lastName variable can
-                ONLY hold a string value.
-            */
-            string lastName="Smith";
+/*
+    C# now supports implicitly typing of a variable. The
+    type of the variable will be determined, by the
+    compiler, at compile time.
+*/
+var firstName="Bill";
 
-            /*
-                C# now supports implicitly typing of a variable. The
-                type of the variable will be determined, by the
-                compiler, at compile time.
-            */
-            var firstName="Bill";
-
-            /*
-              The String.Format() function syntax allows you to
-              build the final string, with placeholders, and
-              then provide comma-delimited list of variables to
-              use in the placeholders.
-            */
-            Console.WriteLine($"{firstName} {lastName} purchased on {purchaseDate}");
-        }
-    }
-}
+/*
+  The String.Format() function syntax allows you to
+  build the final string, with placeholders, and
+  then provide comma-delimited list of variables to
+  use in the placeholders.
+*/
+Console.WriteLine($"{firstName} {lastName} purchased on {purchaseDate}");
+Console.ReadLine();
 ```
 
 # C# Collections
