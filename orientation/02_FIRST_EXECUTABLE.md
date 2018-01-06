@@ -5,49 +5,49 @@
 We're going to get your first C# console application setup and running so that we can review some basics of the language.
 
 Open Visual Studio and create a new project.
-Select `Console Application (.NET Framework )`
+Select `Console App (.NET Framework)`
 Change the name of the project to `MyFirstConsoleApp`
 
-This will create a new [Solution](#need-link) with a new [Project](#need-link) with a single file in it named `Program.cs`
-`Program.cs` is the file that holds your logic. Think of it as your `app.js` from Angular. It's where the logic of your application starts, the entry point.
+This will create a new [Solution](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/solutions-overview) with a new [Project](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/projects) with a single file in it named `Program.cs`.
+`Program.cs` is the file that holds your logic. Think of it as your `app.js` from Angular. It's where the logic of your application starts; the entry point.
 
-Add this code into your Program.cs inside of the Main function, replacing everything there.
+Add this code into your Program.cs inside of the `Main` function, replacing everything there.
 
 ```cs
 Console.WriteLine("Welcome to Bangazon!");
-Console.ReadLine();
+Console.ReadLine(); // What happens if you run the app without this line?
 ```
 
 > ☞ Unike JavaScript, C# is a compiled language, meaning that you need a compiler to read the source code, parse all the logic, and then construct a new executable file.
 
-Next, you compile the program. You can do this by a keyboard shortcut : <kbd>ctrl</kbd>+<kbd>b</kbd> or by going to the `Build` menu and 
+Next, you compile the program. You can do this by a keyboard shortcut : <kbd>Ctrl</kbd>+<kbd>Shift<kbd>+<kbd>B</kbd> or by going to the `Build` menu and 
 selecting the `Build Solution` option.
 
 Now that you have verified that the program will compile without errors, you can execute it.  This can be done by hitting the green play button in the toolbar or by pressing the <kbd>F5</kbd> key. 
 
-You should see `Welcome to Bangazon!` print out in your console application.
+You should see `Welcome to Bangazon!` print out in your console application. Press the any key to continue.
 
 ## Strongly Typed Variables in C#
 
-Now replace your Main function's code with the following.
+Now replace your `Main` function's code with the following.
 
 ```cs
 // DateTime is the type of the purchaseData variable.
-DateTime purchaseDate=DateTime.Now;
+DateTime purchaseDate = DateTime.Now;
 
 /*
     string is the type of the lastName variable. It
     tells the compiler that the lastName variable can
     ONLY hold a string value.
 */
-string lastName="Smith";
+string lastName = "Smith";
 
 /*
     C# now supports implicitly typing of a variable. The
     type of the variable will be determined, by the
     compiler, at compile time.
 */
-var firstName="Bill";
+var firstName = "Bill";
 
 /*
   The String.Format() function syntax allows you to
@@ -105,6 +105,4 @@ foreach (string product in products) {
 
 # Resources
 
-I strongly recommend that you bookmark the following web page.
-
-[C# Programming Guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/index)
+I strongly recommend that you bookmark this [C# Programming Guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/index)

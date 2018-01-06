@@ -2,11 +2,10 @@
 
 ## Setup
 
-```
-mkdir -p ~/workspace/csharp/exercises/classes && cd $_
-dotnet new console
-dotnet restore
-```
+1. File > New > Project (<kbd>Alt</kbd> , <kbd>F</kbd> , <kbd>N</kbd> , <kbd>P</kbd>)
+1. Select `Console App (.NET Framework)` and give your project the name of a company.
+1. Choose a directory location for your project.
+1. Press Enter / Click OK
 
 ## Instructions
 
