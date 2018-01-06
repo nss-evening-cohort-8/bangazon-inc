@@ -20,10 +20,10 @@ Console.ReadLine(); // What happens if you run the app without this line?
 
 > ☞ Unike JavaScript, C# is a compiled language, meaning that you need a compiler to read the source code, parse all the logic, and then construct a new executable file.
 
-Next, you compile the program. You can do this by a keyboard shortcut : <kbd>Ctrl</kbd>+<kbd>Shift<kbd>+<kbd>B</kbd> or by going to the `Build` menu and 
+Next, you compile the program. You can do this by a keyboard shortcut : <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> or by going to the `Build` menu and
 selecting the `Build Solution` option.
 
-Now that you have verified that the program will compile without errors, you can execute it.  This can be done by hitting the green play button in the toolbar or by pressing the <kbd>F5</kbd> key. 
+Now that you have verified that the program will compile without errors, you can execute it.  This can be done by hitting the green play button in the toolbar or by pressing the <kbd>F5</kbd> key.
 
 You should see `Welcome to Bangazon!` print out in your console application. Press the any key to continue.
 
