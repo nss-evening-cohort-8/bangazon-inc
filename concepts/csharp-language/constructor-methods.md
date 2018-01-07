@@ -41,7 +41,7 @@ class Car
     public string Model { get; set; }
 
     // Constructor method for every Car
-    public Car () 
+    public Car ()
     {
         this.Wheels = 4;
     }
@@ -53,8 +53,31 @@ Hey, look!  It's the `this` keyword again! It is a reference to the object you c
 
 ```cs
 Car accord = new Car();
-Console.WriteLine(accord.wheels); // This will output 4
+Console.WriteLine(accord.Wheels); // This will output 4
 
 Car jaguar = new Car();
-Console.WriteLine(jaguar.wheels); // Also 4
+Console.WriteLine(jaguar.Wheels); // Also 4
+```
+
+As with any other method, the constructor method also accepts parameters.
+
+```cs
+class Car
+{
+    // Simple public properties
+    public int Wheels { get; set; }
+    public string Color { get; set; }
+    public string Make { get; set; }
+    public string Model { get; set; }
+
+    // Constructor method for every Car
+    public Car (string color)
+    {
+        this.Color = color;
+    }
+
+}
+
+Car subaru = new Car("black");
+Console.WriteLine(subaru.Color) // "black"
 ```

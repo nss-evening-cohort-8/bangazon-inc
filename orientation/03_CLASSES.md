@@ -1,6 +1,6 @@
 # User Defined Types
 
-A class is a blueprint, or a template, for creating an object instance in memory. C# and the .Net Framework define many types, such as `int`, `decimal`, and `bool` ([value types](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types)), and `Array`, `string`, and `Object` ([reference types](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types)) in C#, you can also create your own types.
+A [class](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/class) is a blueprint, or a template, for creating an object instance in memory. C# and the .Net Framework define many types, such as `int`, `decimal`, and `bool` ([value types](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types)), and `Array`, `string`, and `Object` ([reference types](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types)) in C#, you can also create your own types.
 
 You create a new reference type with a class.
 
@@ -20,139 +20,7 @@ string output = "Nashville Software School";
 Writer author = new Writer();
 author.write(output);
 ```
-
-## Accessibility Levels
-
-In C#, there are five accessibility levels that can be applied to Classes, Methods, Properties and Data Members:
-
-- public
-- private
-- protected
-- internal
-- protected internal
-
-## Public
-
-Classes and Methods that have tagged with the `public` keyword are accessibile without restriction. `public` methods are usable from derived classes (i.e. children) and from outside the inheritance heirarchy (i.e. family).
-
-In some `Automobile.cs`:
-
-```cs
-// Base class
-class Automobile {
-
-    public string Accelerate() {
-        return "zoom!";
-    }
-
-}
-
-// Derived class
-class Car : Automobile { }
-```
-
-> `Program.cs`:
-
-```cs
-Automobile generic_auto = new Automobile();
-Console.WriteLine("Automobiles go {0}", generic_auto.Accelerate());
-
-Car stella = new Car();
-Console.WriteLine("Cars go {0}", stella.Accelerate());
-```
-
-## Private
-
-Classes and Methods that have tagged with the `private` keyword are only accessible from within the class where it's defined. This means that private methods can not be called from anywhere outside the class, including derived classes (children).
-
-Private methods are intended to be internal functionality. Consider the classes below:
-
-```cs
-// Base class
-class Automobile {
-
-    public string Accelerate() {
-        this.InjectFuel();
-        return "zoom";
-    }
-
-    private string InjectFuel() {
-        return "fueling";
-    }
-}
-
-// Usage Example in a Program.cs file somewhere
-
-Automobile generic_auto = new Automobile();
-Console.WriteLine("Automobiles go {0}", generic_auto.Accelerate());
-
-// However, the following line of code does not compile
-generic_auto.InjectFuel();
-```
-
-```cs
-// Given a Derived class, the follow code does not compile
-class Car : Automobile {
-
-    public string CallAPrivateParentMethod {
-        this.InjectFuel(); // Can not call InjectFuel b/c it's listed as private its parent class, Automobile
-    }
-}
-
-// Usage Example in a Program.cs file somewhere
-Car stella = new Car();
-
-// Again, the following line of code does not compile
-stella.InjectFuel();
-```
-
-## Protected
-
-Classes and Methods that have tagged with the `protected` keyword prevent access from outside the class heirarchy (ie. the family); however, `protected` methods are usable from derived classes (i.e. children).
-
-```cs
-// Base class
-class Automobile {
-
-    public string Break() {
-        this.SqueezeBreakPads();
-        return "skuuuuuur";
-    }
-
-    protected string SqueezeBreakPads() {
-        return "";
-    }
-}
-
-// Derived class
-class Car : Automobile {
-
-    public string UseEmergencyBreak() {
-        this.SqueezeBreakPads();
-        return "skreeech!";
-    }
-}
-
-// Usage Example in a Program.cs file somewhere
-Car stella = new Car();
-
-// UseEmergencyBreak method can use the protected SqueezeBreakPads from the Automobile class.
-Console.WriteLine("Applying the break: {0}", stella.UseEmergencyBreak());
-```
-
-## Internal
-
-Classes and Methods that have tagged with the `internal` keyword allow access from anywhere within the same compiled DLL (assembly).
-
-## Protected Internal
-
-`protected internal` is the only allowed combination of multiple access modifiers.
-
-## Resources
-
-* https://msdn.microsoft.com/en-us/library/ba0a1yw2.aspx
-
-> **Resource:** [Access Modifiers (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)
+> [Native types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table) are special keywords built into C# like `int`, `bool`, `string`, etc that serve as aliases for .NET libraries like `System.Int32`, `System.Boolean`, `System.String`, etc.
 
 # Properties and Fields
 
@@ -250,4 +118,24 @@ public class Product
 }
 ```
 
-> **Resource:** [Properties (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties)
+> **Resources:** [Methods (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods)
+
+# Accessibility Levels
+
+In C#, there are five accessibility levels that can be applied to Classes, Methods, Properties and Data Members:
+
+- public
+- private
+- protected
+- internal
+- protected internal
+- private protected
+
+> **Resource:** [Access Modifiers (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)
+
+| Members of | Default member accessibility | Allowed declared accessibility of the member |
+|-------------|------------------------------|--------------------------------------------|
+| `class` | `private` | All |
+| `interface` | `public` | None |
+| `enum` | `public` | None |
+| `struct` | `private` | `public`, `internal`, & `private` |

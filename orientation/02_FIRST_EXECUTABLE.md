@@ -4,9 +4,9 @@
 
 We're going to get your first C# console application setup and running so that we can review some basics of the language.
 
-Open Visual Studio and create a new project.
-Select `Console App (.NET Framework)`
-Change the name of the project to `MyFirstConsoleApp`
+1. Open Visual Studio and create a new project.
+1. Select `Console App (.NET Framework)`
+1. Change the name of the project to `MyFirstConsoleApp` and choose a directory location for your project.
 
 This will create a new [Solution](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/solutions-overview) with a new [Project](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/projects) with a single file in it named `Program.cs`.
 `Program.cs` is the file that holds your logic. Think of it as your `app.js` from Angular. It's where the logic of your application starts; the entry point.
@@ -15,7 +15,7 @@ Add this code into your Program.cs inside of the `Main` function, replacing ever
 
 ```cs
 Console.WriteLine("Welcome to Bangazon!");
-Console.ReadLine(); // What happens if you run the app without this line?
+Console.ReadKey(); // What happens if you run the app without this line?
 ```
 
 > ☞ Unike JavaScript, C# is a compiled language, meaning that you need a compiler to read the source code, parse all the logic, and then construct a new executable file.
