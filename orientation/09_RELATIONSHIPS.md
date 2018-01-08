@@ -26,6 +26,52 @@ class SoccerBall : Ball
 }
 ```
 
+## Method Based Polymorphism
+
+A method's arity, or signature, can be overloaded. This is very different from JavaScript, when a function can only be defined once. This is not a rule in C#.
+
+Let's make our `Animal.Walk()` method more flexible. As it was written above, it makes the assumption that the `Speed` and `Legs` properties have been set by the developer who created an instance. That's a bad assumption, so let's write code that will handle that case, but also allow the speed and legs values to be sent as parameters to the method.
+
+```cs
+class Animal {
+    // Simple properties
+    public double Speed { get; set; }
+    public string Species { get; set; }
+    public int Legs { get; set; }
+
+    // Public method that can be redefined by derived classes
+    public void Walk () {
+        Speed = Speed + (0.1 * Legs);
+        Console.WriteLine($"Animal class walk method ({Speed})");
+    }
+
+    public void Walk (double speed, int legs) {
+        // Set the object instance properties to the parameter values
+        Legs = legs;
+        Speed = Speed + (0.1 * Legs);
+        Console.WriteLine($"Animal class walk method that accepts parameters ({Speed})");
+    }
+}
+
+Animal abigail = new Animal(){
+    Speed = 0.44,
+    Legs = 2
+};
+abigail.Walk();
+
+Animal aaron = new Animal();
+aaron.Walk();
+aaron.Walk(0.38, 4);
+```
+
+> Output
+
+```sh
+Animal class walk method (0.64)
+Animal class walk method (0)
+Animal class walk method that accepts parameters (0.4)
+```
+
 ## Composition
 
 Composition is for things that make up other things. If the container object is destroyed, so will all of its composing parts. Composition is the pattern for part-of relationships.
