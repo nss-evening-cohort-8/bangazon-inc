@@ -1,15 +1,6 @@
 # Kill Nickelback
 
-In this exercise, you're going to use HashSets, Tuples, and Lists.
-
-## Setup
-
-```
-mkdir -p ~/workspace/csharp/exercises/nickelback && cd $_
-dotnet new console
-dotnet add package System.ValueTuple
-dotnet restore
-```
+In this exercise, you're going to use HashSets, and Lists.
 
 ## Instructions
 
