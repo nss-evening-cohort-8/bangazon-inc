@@ -33,8 +33,8 @@ List<string> planetList = new List<string>(){"Mercury", "Mars"};
 
 > **Ref:** [List of Solar System probes](https://en.wikipedia.org/wiki/List_of_Solar_System_probes)
 
-1. Create another list containing dictionaries. Each dictionary will hold the name of a spacecraft that we have launched, and the name of the planet that it has visited. If it visited more than one planet, just pick one.
-1. Iterate over your list of planets from above, and inside that loop, iterate over the list of dictionaries. Write to the console, for each planet, which satellites have visited which planet.
+1. Create another dictionary that will hold the name of a spacecraft that we have launched, and a list of names of the planets that it has visited. Remember that `List` is a Type just like native types (such as `string`, `int`, & `bool`) and your custom types (such as `Movie`, `Dog`, and `Food`). They can be passed to anything, like a dictionary, as a Type.
+1. Iterate over your list of planets from above, and inside that loop, iterate over the dictionary. Write to the console, for each planet, which satellites have visited which planet.
 
 ```sh
 Mars: Viking, Opportunity, Curiosity
