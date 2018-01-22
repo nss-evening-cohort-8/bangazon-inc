@@ -19,7 +19,7 @@ dotnet restore
 
 ## Instructions
 
-1. Use your knowledge of the Interface Segregation Principle and the Dependency Inversion Principle to convert the code below into a system that is more flexible and extensible to accomodate any kind of vehicle class. Each class should only implement code that it needs.
+1. Use your knowledge of the Interface Segregation Principle and the Dependency Inversion Principle to convert the code below into a system that is more flexible and extensible to accommodate any kind of vehicle class. Each class should only implement code that it needs.
 1. Create at least two types of each vehicle (water based, ground based, and air based). I've given you one of each kind.
 1. Complete the tasks in the comments of the `Main()` method below.
 
@@ -31,19 +31,19 @@ using System.Collections.Generic;
 
 public interface IVehicle
 {
-    int Wheels { get; set; }
-    int Doors { get; set; }
-    int PassengerCapacity { get; set; }
-    bool Winged { get; set; }
-    string TransmissionType { get; set; }
-    double EngineVolume { get; set; }
-    double MaxWaterSpeed { get; set; }
-    double MaxLandSpeed { get; set; }
-    double MaxAirSpeed { get; set; }
-    void Start();
-    void Stop();
-    void Drive();
-    void Fly();
+    // an int property called Wheels
+    // an int property called Doors
+    // an int property called PassengerCapacity
+    // a bool property called Winged
+    // a string property called TransmissionType
+    // a double property called EngineVolume
+    // a double property called MaxWaterSpeed
+    // a double property called MaxLandSpeed
+    // a double property called MaxAirSpeed
+    // a method called Start() that returns void
+    // a method called Stop() that returns void
+    // a method called Drive() that returns void
+    // a method called Fly() that returns void
 }
 
 public class JetSki : IVehicle
@@ -164,7 +164,7 @@ public class Program
 
 
         // Build a collection of all vehicles that operate on water
-        
+
         // With a single `foreach`, have each water vehicle Drive()
     }
 
