@@ -1,13 +1,5 @@
 # Interfaces and SOLID
 
-## Setup
-
-```
-mkdir -p ~/workspace/csharp/exercises/vehicles && cd $_
-dotnet new console
-dotnet restore
-```
-
 ## References
 
 * [D is for the Dependency Inversion Principle](https://news.realm.io/news/donn-felker-solid-part-5/)
