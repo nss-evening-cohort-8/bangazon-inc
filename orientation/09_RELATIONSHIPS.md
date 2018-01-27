@@ -49,11 +49,12 @@ class Body
 {
     public double height { get; set; }
     public double weight { get; set; }
-
+    public Pancreas Pancreas { get; set; }
+    public Liver Liver { get; set; }
     public Body ()
     {
-        Pancreas pancreas = new Pancreas();
-        Liver liver = new Liver();
+        Pancreas = new Pancreas();
+        Liver = new Liver();
     }
 }
 ```
