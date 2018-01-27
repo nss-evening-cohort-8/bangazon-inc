@@ -10,8 +10,8 @@ For this exercise, you need to modify the Department class so that Employees can
 
 Create two new methods.
 
-1. `AddEmployee(Employee employee)` - Add an employee to the set. The `employee` parameter accepts an existing instance of an employee.
-1. `RemoveEmployee(Employee employee)` - Removes an employee from the set. The `employee` parameter accepts an existing instance of an employee.
+1. `void AddEmployee(Employee employee)` - Add an employee to the set. The `employee` parameter accepts an existing instance of an employee.
+1. `void RemoveEmployee(Employee employee)` - Removes an employee from the set. The `employee` parameter accepts an existing instance of an employee.
 
 In your `Main` method, create an instance of each of your Departments that you have defined. Then create two or three Employee instances for each Department, and add them to the appropriate Department instance.
 
