@@ -1,0 +1,11 @@
+1. Create a new interface in the `Pieces` namespace called `IWeapon`
+1. Add a read-only `Damage` property of type `int` to `IWeapon`
+1. Create a new interface in the `Pieces` namespace called `IHealthGiver`
+1. Add a read-only `Health` property of type `int` to `IHealthGiver`
+1. Create 5 new accessories that inherit from `AccessoryBase` that also implement the `IWeapon` interface
+1. Create at least 1 additional torso that inherits from `TorsoBase` and also implements `IHealthGiver`
+1. Modify `DadBod` to implement `IHealthGiver`
+1. Create at least 1 additional head that inherits from `HeadBase` and also implements `IHealthGiver`
+1. Modify `Emmet` to implement `IHealthGiver`
+1. Add a private field to Minifigure to store total
+1. Add a `Fight` method to the `Minifigure` class.  It should take in a parameter `Minifigure opponent`
