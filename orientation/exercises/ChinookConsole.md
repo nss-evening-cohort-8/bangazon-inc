@@ -9,4 +9,6 @@ Create a console application that allows the user to run and view the results of
 1. INSERT a new invoice with parameters for customerid and billing address
 1. UPDATE an Employee's name with a parameter for Employee Id and new name
 
+Each query should be represented by a main menu item.  Each parameter should be prompted for by name from the user.
+
 Remember, it is helpful to create models for these sets of data so that you have a way to represent them in your code.  Models do not have to be exactly representative of tables, but can also represent the results of queries.
