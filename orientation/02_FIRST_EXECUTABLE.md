@@ -5,7 +5,7 @@
 We're going to get your first C# console application setup and running so that we can review some basics of the language.
 
 1. Open Visual Studio and create a new project.
-1. Select `Console App (.NET Framework)`
+1. Select `Console App (.NET Core)`
 1. Change the name of the project to `MyFirstConsoleApp` and choose a directory location for your project.
 
 This will create a new [Solution](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/solutions-overview) with a new [Project](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/projects) with a single file in it named `Program.cs`.
