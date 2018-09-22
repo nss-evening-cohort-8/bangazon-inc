@@ -1,7 +1,5 @@
 # Controllers
 * A controller handles the flow of information between front end and back end.
-* Controller will change over time.
-  * Business logic belongs in Repository, not Controller.
 * The name of each controller ends in "...Controller", and inherits from .NET `System.Web.Mvc.Controller` class.
 * Each controller method connects a particular request route from a client to a particular response action that the server performs.
 
